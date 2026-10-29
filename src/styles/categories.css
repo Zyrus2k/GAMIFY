@@ -1,0 +1,719 @@
+/* Shared category variables */
+
+.game--bayblade {
+  --cat: #ff5b1f;
+  --cat-two: #56e0ff;
+  --cat-soft: rgba(255, 91, 31, 0.13);
+  --cat-line: rgba(255, 91, 31, 0.34);
+}
+
+.game--cardfight-vanguard {
+  --cat: #8b7bff;
+  --cat-two: #c9d2ff;
+  --cat-soft: rgba(139, 123, 255, 0.14);
+  --cat-line: rgba(139, 123, 255, 0.34);
+}
+
+.game--cookie-run {
+  --cat: #ff7bac;
+  --cat-two: #8ef2cc;
+  --cat-soft: rgba(255, 123, 172, 0.15);
+  --cat-line: rgba(255, 123, 172, 0.34);
+}
+
+.game--cyberpunk {
+  --cat: #d8ff3e;
+  --cat-two: #ff3ea5;
+  --cat-soft: rgba(216, 255, 62, 0.11);
+  --cat-line: rgba(216, 255, 62, 0.32);
+}
+
+.game--riftbound {
+  --cat: #3fe0b0;
+  --cat-two: #a78bfa;
+  --cat-soft: rgba(63, 224, 176, 0.12);
+  --cat-line: rgba(63, 224, 176, 0.32);
+}
+
+.game--pokemon {
+  --cat: #ffd23f;
+  --cat-two: #ff5d5d;
+  --cat-soft: rgba(255, 210, 63, 0.13);
+  --cat-line: rgba(255, 210, 63, 0.36);
+}
+
+.game--mtg {
+  --cat: #d8b46a;
+  --cat-two: #9d8cff;
+  --cat-soft: rgba(216, 180, 106, 0.13);
+  --cat-line: rgba(216, 180, 106, 0.34);
+}
+
+.game--flesh-and-blood {
+  --cat: #e02c3d;
+  --cat-two: #c7b7a3;
+  --cat-soft: rgba(224, 44, 61, 0.14);
+  --cat-line: rgba(224, 44, 61, 0.36);
+}
+
+/* ------------------------------------------------------------------
+   BAYBLADE — brushed metal, impact angles, spinning-disc energy
+------------------------------------------------------------------ */
+
+.cat-card.cat--bayblade {
+  background:
+    linear-gradient(105deg, transparent 0 38%, rgba(255, 255, 255, 0.035) 38% 39%, transparent 39%),
+    linear-gradient(135deg, #1c1b19 0%, #0d0d0e 54%, #151413 100%);
+  border-color: rgba(255, 91, 31, 0.3);
+  border-radius: 2px;
+}
+
+.cat-card.cat--bayblade::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    115deg,
+    transparent 0 22px,
+    rgba(255, 255, 255, 0.028) 22px 23px
+  );
+}
+
+.cat-card.cat--bayblade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 86px;
+  height: 86px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, transparent 49%, rgba(255, 91, 31, 0.16) 50%);
+}
+
+.cat-card.cat--bayblade h3 {
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.012em;
+  transform: translateX(-1px);
+}
+
+.cat-card.cat--bayblade .cat-card__motif {
+  color: #ff8a5c;
+  opacity: 0.34;
+}
+
+.cat-card.cat--bayblade .cat-card__count {
+  border-color: rgba(255, 91, 31, 0.34);
+  color: #ffa57e;
+  background: rgba(255, 91, 31, 0.07);
+}
+
+.cat-card.cat--bayblade .cat-card__tagline {
+  color: #a99b93;
+}
+
+.cat-card.cat--bayblade .cat-card__foot {
+  border-top-color: rgba(255, 91, 31, 0.24);
+}
+
+.cat-card.cat--bayblade:hover {
+  border-color: rgba(255, 91, 31, 0.6);
+  box-shadow: 0 18px 42px rgba(255, 91, 31, 0.09);
+}
+
+.cat-card.cat--bayblade:hover .cat-card__motif {
+  opacity: 0.55;
+  transform: rotate(22deg) scale(1.06);
+}
+
+/* ------------------------------------------------------------------
+   CARD-FIGHT VANGUARD — layered cards, disciplined tactical framing
+------------------------------------------------------------------ */
+
+.cat-card.cat--cardfight {
+  padding: 20px;
+  background: linear-gradient(158deg, #191b2e 0%, #0d0e17 62%, #10111c 100%);
+  border-color: rgba(139, 123, 255, 0.3);
+  border-radius: 2px;
+}
+
+.cat-card.cat--cardfight::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(201, 210, 255, 0.1);
+  border-radius: 1px;
+}
+
+.cat-card.cat--cardfight::after {
+  content: '';
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 76px;
+  height: 106px;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(139, 123, 255, 0.22);
+  background: linear-gradient(160deg, rgba(139, 123, 255, 0.08), transparent 70%);
+  transform: rotate(8deg);
+}
+
+.cat-card.cat--cardfight h3 {
+  font-weight: 600;
+  letter-spacing: 0.045em;
+}
+
+.cat-card.cat--cardfight .cat-card__motif {
+  top: 42px;
+  right: -12px;
+  color: #c9d2ff;
+  opacity: 0.27;
+}
+
+.cat-card.cat--cardfight .cat-card__count {
+  border-color: rgba(139, 123, 255, 0.32);
+  color: #bfb8ff;
+  background: rgba(139, 123, 255, 0.07);
+}
+
+.cat-card.cat--cardfight .cat-card__tagline {
+  color: #9b9bb7;
+}
+
+.cat-card.cat--cardfight .cat-card__foot {
+  border-top-color: rgba(139, 123, 255, 0.2);
+}
+
+.cat-card.cat--cardfight:hover {
+  border-color: rgba(139, 123, 255, 0.58);
+  box-shadow: 0 18px 44px rgba(139, 123, 255, 0.1);
+}
+
+.cat-card.cat--cardfight:hover::after {
+  transform: rotate(3deg) translate(-3px, 3px);
+  transition: transform 0.5s var(--ease);
+}
+
+/* ------------------------------------------------------------------
+   COOKIE RUN — candy gradients, rounded candy-shell surfaces
+------------------------------------------------------------------ */
+
+.cat-card.cat--cookie {
+  background:
+    radial-gradient(circle at 88% 4%, rgba(255, 123, 172, 0.24), transparent 48%),
+    radial-gradient(circle at 4% 100%, rgba(142, 242, 204, 0.09), transparent 46%),
+    linear-gradient(155deg, #251624, #120e13);
+  border-color: rgba(255, 123, 172, 0.3);
+  border-radius: 18px;
+}
+
+.cat-card.cat--cookie::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.17) 1px, transparent 1.5px);
+  background-size: 27px 27px;
+  opacity: 0.4;
+  -webkit-mask-image: linear-gradient(120deg, transparent 38%, black);
+  mask-image: linear-gradient(120deg, transparent 38%, black);
+}
+
+.cat-card.cat--cookie h3 {
+  letter-spacing: 0.025em;
+}
+
+.cat-card.cat--cookie .cat-card__motif {
+  color: #ffb5cf;
+  opacity: 0.34;
+}
+
+.cat-card.cat--cookie .cat-card__count {
+  border-color: rgba(255, 123, 172, 0.38);
+  border-radius: 999px;
+  color: #ffb9d2;
+  background: rgba(255, 123, 172, 0.09);
+}
+
+.cat-card.cat--cookie .cat-card__tagline {
+  color: #bb93a5;
+}
+
+.cat-card.cat--cookie .cat-card__foot {
+  border-top-style: dashed;
+  border-top-color: rgba(255, 123, 172, 0.28);
+}
+
+.cat-card.cat--cookie:hover {
+  border-color: rgba(255, 123, 172, 0.62);
+  box-shadow: 0 20px 48px rgba(255, 123, 172, 0.12);
+}
+
+.cat-card.cat--cookie:hover .cat-card__motif {
+  opacity: 0.55;
+  transform: rotate(-8deg) scale(1.06);
+}
+
+/* ------------------------------------------------------------------
+   CYBERPUNK — neon grid, clipped chrome corners, signal glitch
+------------------------------------------------------------------ */
+
+.cat-card.cat--cyberpunk {
+  background: linear-gradient(160deg, #0d1311 0%, #070908 58%, #0c100d 100%);
+  border-color: rgba(216, 255, 62, 0.28);
+  border-radius: 0;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 16px) 0,
+    100% 16px,
+    100% 100%,
+    16px 100%,
+    0 calc(100% - 16px)
+  );
+}
+
+.cat-card.cat--cyberpunk::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(216, 255, 62, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216, 255, 62, 0.05) 1px, transparent 1px);
+  background-size: 23px 23px;
+  -webkit-mask-image: linear-gradient(135deg, transparent 32%, black);
+  mask-image: linear-gradient(135deg, transparent 32%, black);
+}
+
+.cat-card.cat--cyberpunk::after {
+  content: '01001';
+  position: absolute;
+  top: 44px;
+  right: 12px;
+  z-index: 0;
+  color: rgba(216, 255, 62, 0.34);
+  font-family: var(--font-display);
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  writing-mode: vertical-rl;
+  pointer-events: none;
+}
+
+.cat-card.cat--cyberpunk h3 {
+  letter-spacing: -0.005em;
+  text-shadow:
+    1px 0 rgba(255, 62, 165, 0.4),
+    -1px 0 rgba(86, 224, 255, 0.35);
+}
+
+.cat-card.cat--cyberpunk .cat-card__motif {
+  color: #d8ff3e;
+  opacity: 0.3;
+}
+
+.cat-card.cat--cyberpunk .cat-card__count {
+  border-color: rgba(216, 255, 62, 0.4);
+  border-radius: 0;
+  color: #d8ff3e;
+  background: rgba(216, 255, 62, 0.06);
+}
+
+.cat-card.cat--cyberpunk .cat-card__tagline {
+  color: #93a07d;
+}
+
+.cat-card.cat--cyberpunk .cat-card__foot {
+  border-top-color: rgba(216, 255, 62, 0.22);
+  color: #cddba0;
+}
+
+.cat-card.cat--cyberpunk:hover {
+  border-color: rgba(216, 255, 62, 0.75);
+  box-shadow:
+    0 0 0 1px rgba(216, 255, 62, 0.12),
+    0 18px 52px rgba(216, 255, 62, 0.09);
+}
+
+.cat-card.cat--cyberpunk:focus-visible {
+  outline: 0;
+  box-shadow:
+    0 0 0 2px #070908,
+    0 0 0 4px #d8ff3e;
+}
+
+.cat-card.cat--cyberpunk:hover h3 {
+  animation: catGlitch 0.45s steps(2, end) 1;
+}
+
+@keyframes catGlitch {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ------------------------------------------------------------------
+   RIFTBOUND — arcane rings, leyline glow, ornate dark panels
+------------------------------------------------------------------ */
+
+.cat-card.cat--riftbound {
+  background:
+    radial-gradient(circle at 78% 26%, rgba(63, 224, 176, 0.15), transparent 46%),
+    radial-gradient(circle at 10% 110%, rgba(167, 139, 250, 0.08), transparent 42%),
+    linear-gradient(155deg, #111c18, #0a0f0d);
+  border-color: rgba(63, 224, 176, 0.3);
+  border-radius: 4px;
+}
+
+.cat-card.cat--riftbound::before {
+  content: '';
+  position: absolute;
+  top: -82px;
+  right: -82px;
+  width: 224px;
+  height: 224px;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(63, 224, 176, 0.22);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 18px rgba(63, 224, 176, 0.03),
+    0 0 0 42px rgba(63, 224, 176, 0.018);
+}
+
+.cat-card.cat--riftbound::after {
+  content: '✦';
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  z-index: 0;
+  color: rgba(167, 139, 250, 0.72);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.cat-card.cat--riftbound h3 {
+  color: #e9fff8;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+}
+
+.cat-card.cat--riftbound .cat-card__motif {
+  color: #3fe0b0;
+  opacity: 0.38;
+  filter: drop-shadow(0 0 12px rgba(63, 224, 176, 0.4));
+}
+
+.cat-card.cat--riftbound .cat-card__count {
+  border-color: rgba(63, 224, 176, 0.34);
+  color: #8ef0d3;
+  background: rgba(63, 224, 176, 0.07);
+}
+
+.cat-card.cat--riftbound .cat-card__tagline {
+  color: #85b6a6;
+}
+
+.cat-card.cat--riftbound .cat-card__foot {
+  border-top-color: rgba(63, 224, 176, 0.2);
+}
+
+.cat-card.cat--riftbound:hover {
+  border-color: rgba(63, 224, 176, 0.6);
+  box-shadow: 0 20px 46px rgba(63, 224, 176, 0.09);
+}
+
+.cat-card.cat--riftbound:hover .cat-card__motif {
+  opacity: 0.58;
+  transform: rotate(-14deg) scale(1.05);
+}
+
+/* ------------------------------------------------------------------
+   POKEMON — bright collectible framing, electric contrast
+------------------------------------------------------------------ */
+
+.cat-card.cat--pokemon {
+  background:
+    linear-gradient(180deg, rgba(255, 210, 63, 0.11), transparent 38%),
+    linear-gradient(155deg, #1c170d, #0f0d09);
+  border-color: rgba(255, 210, 63, 0.38);
+  border-top: 3px solid #ffd23f;
+  border-radius: 12px;
+}
+
+.cat-card.cat--pokemon::before {
+  content: '';
+  position: absolute;
+  top: -34px;
+  right: -34px;
+  width: 118px;
+  height: 118px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 210, 63, 0.25), transparent 66%);
+}
+
+.cat-card.cat--pokemon::after {
+  content: '';
+  position: absolute;
+  top: 52px;
+  right: 20px;
+  width: 1px;
+  height: 62px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(255, 210, 63, 0.3), transparent);
+  transform: rotate(22deg);
+}
+
+.cat-card.cat--pokemon h3 {
+  color: #fff6d5;
+  font-weight: 700;
+  letter-spacing: 0.012em;
+}
+
+.cat-card.cat--pokemon .cat-card__motif {
+  color: #ffd23f;
+  opacity: 0.4;
+}
+
+.cat-card.cat--pokemon .cat-card__count {
+  border-color: rgba(255, 210, 63, 0.42);
+  border-radius: 999px;
+  color: #ffe27a;
+  background: rgba(255, 210, 63, 0.08);
+}
+
+.cat-card.cat--pokemon .cat-card__tagline {
+  color: #b3a274;
+}
+
+.cat-card.cat--pokemon .cat-card__foot {
+  border-top-color: rgba(255, 210, 63, 0.22);
+}
+
+.cat-card.cat--pokemon .cat-card__arrow {
+  color: #ff5d5d;
+}
+
+.cat-card.cat--pokemon:hover {
+  border-color: rgba(255, 210, 63, 0.72);
+  border-top-color: #ffd23f;
+  box-shadow: 0 20px 48px rgba(255, 210, 63, 0.1);
+}
+
+.cat-card.cat--pokemon:hover .cat-card__motif {
+  opacity: 0.6;
+  transform: translateY(-3px) rotate(4deg) scale(1.05);
+}
+
+/* ------------------------------------------------------------------
+   MAGIC THE GATHERING — gold hairline frames, mature premium finish
+------------------------------------------------------------------ */
+
+.cat-card.cat--mtg {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(216, 180, 106, 0.1), transparent 44%),
+    linear-gradient(160deg, #19140f, #0c0a08);
+  border-color: rgba(216, 180, 106, 0.34);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.06);
+}
+
+.cat-card.cat--mtg::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(216, 180, 106, 0.18);
+}
+
+.cat-card.cat--mtg::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  height: 1px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 106, 0.44), transparent);
+}
+
+.cat-card.cat--mtg h3 {
+  color: #ecd9ae;
+  font-size: clamp(21px, 1.85vw, 27px);
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  line-height: 1;
+}
+
+.cat-card.cat--mtg .cat-card__motif {
+  top: 42px;
+  right: -12px;
+  color: #d8b46a;
+  opacity: 0.28;
+}
+
+.cat-card.cat--mtg .cat-card__tagline {
+  color: #a89a7d;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.cat-card.cat--mtg .cat-card__count {
+  border-color: rgba(216, 180, 106, 0.32);
+  border-radius: 0;
+  color: #d8b46a;
+  background: rgba(216, 180, 106, 0.06);
+  letter-spacing: 0.15em;
+}
+
+.cat-card.cat--mtg .cat-card__foot {
+  border-top-color: rgba(216, 180, 106, 0.2);
+  color: #d8b46a;
+  letter-spacing: 0.16em;
+}
+
+.cat-card.cat--mtg .cat-card__foot-meta {
+  color: #6f6450;
+}
+
+.cat-card.cat--mtg .cat-card__arrow {
+  color: #d8b46a;
+}
+
+.cat-card.cat--mtg:hover {
+  border-color: rgba(216, 180, 106, 0.62);
+  box-shadow:
+    0 20px 52px rgba(0, 0, 0, 0.6),
+    inset 0 0 44px rgba(216, 180, 106, 0.045);
+}
+
+/* ------------------------------------------------------------------
+   FLESH AND BLOOD — crimson pressure, steel slashes, combat weight
+------------------------------------------------------------------ */
+
+.cat-card.cat--flesh {
+  background:
+    linear-gradient(125deg, rgba(224, 44, 61, 0.18), transparent 48%),
+    linear-gradient(160deg, #190e10, #0b090a);
+  border-color: rgba(224, 44, 61, 0.34);
+  border-radius: 2px;
+}
+
+.cat-card.cat--flesh::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -35deg,
+    transparent 0 12px,
+    rgba(224, 44, 61, 0.038) 12px 13px
+  );
+}
+
+.cat-card.cat--flesh::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 36px;
+  width: 1px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(224, 44, 61, 0.4), transparent);
+}
+
+.cat-card.cat--flesh h3 {
+  color: #ffe8e9;
+  font-weight: 800;
+  letter-spacing: 0.008em;
+}
+
+.cat-card.cat--flesh .cat-card__motif {
+  color: #e02c3d;
+  opacity: 0.36;
+}
+
+.cat-card.cat--flesh .cat-card__count {
+  border-color: rgba(224, 44, 61, 0.38);
+  border-radius: 0;
+  color: #ff9aa3;
+  background: rgba(224, 44, 61, 0.08);
+}
+
+.cat-card.cat--flesh .cat-card__tagline {
+  color: #c08f94;
+  letter-spacing: 0.1em;
+}
+
+.cat-card.cat--flesh .cat-card__foot {
+  border-top-color: rgba(224, 44, 61, 0.26);
+  color: #ffb0b6;
+}
+
+.cat-card.cat--flesh:hover {
+  border-color: rgba(224, 44, 61, 0.68);
+  box-shadow: 0 20px 50px rgba(224, 44, 61, 0.11);
+}
+
+.cat-card.cat--flesh:hover .cat-card__motif {
+  opacity: 0.55;
+  transform: rotate(6deg) scale(1.05);
+}
+
+/* Category-specific detail accents */
+
+.game-banner.cat--bayblade .game-banner__ring {
+  border-radius: 4px;
+  transform: rotate(45deg);
+}
+
+.game-banner.cat--cyberpunk .game-banner__ring {
+  border-radius: 0;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.game-banner.cat--cookie .game-banner__world,
+.game-banner.cat--cookie .game-banner__ring {
+  border-radius: 50%;
+}
+
+.game-banner.cat--mtg .eyebrow__bar {
+  background: #d8b46a;
+}
+
+.game-banner.cat--flesh .eyebrow__bar {
+  background: #e02c3d;
+}
+
+@media (max-width: 1180px) {
+  .cat-card.cat--cardfight::after {
+    width: 64px;
+    height: 90px;
+  }
+}
