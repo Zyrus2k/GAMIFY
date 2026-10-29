@@ -5,12 +5,25 @@ import { flagEmoji, formatCompactCurrency, formatDateTime } from '../lib/format'
 import { isPublicTournament } from '../lib/events'
 import { useApp } from '../context/AppContext'
 
-const heroArtwork: Partial<Record<string, string>> = {
-  bayblade: '/images/categories/bayblade-artwork.webp',
-  'cardfight-vanguard': '/images/categories/cardfight-vanguard-artwork.webp',
-  'cookie-run': '/images/categories/cookie-run-artwork.webp',
-  cyberpunk: '/images/categories/cyberpunk-artwork.webp',
-  riftbound: '/images/categories/riftbound-artwork.webp',
+const heroArtwork: Record<string, string> = {
+  bayblade: '/images/categories/backgrounds/beyblade-x.webp',
+  'cardfight-vanguard': '/images/categories/backgrounds/cardfight-vanguard.jpg',
+  'cookie-run': '/images/categories/backgrounds/cookie-run-kingdom.jpg',
+  cyberpunk: '/images/categories/backgrounds/cyberpunk-2077.jpg',
+  riftbound: '/images/categories/backgrounds/riftbound-jinx-art.jpg',
+  pokemon: '/images/categories/backgrounds/pokemon-pikachu.png',
+  mtg: '/images/categories/backgrounds/magic-planeswalker.jpg',
+  'flesh-and-blood': '/images/categories/backgrounds/flesh-and-blood-kassai.webp',
+}
+const heroArtworkPosition: Record<string, string> = {
+  bayblade: '50% 48%',
+  'cardfight-vanguard': '50% 56%',
+  'cookie-run': '52% 48%',
+  cyberpunk: '50% 52%',
+  riftbound: '42% 48%',
+  pokemon: '50% 45%',
+  mtg: '50% 48%',
+  'flesh-and-blood': '50% 38%',
 }
 
 export function HeroSection() {
@@ -96,9 +109,18 @@ export function HeroSection() {
               </span>
               <span className="stage-panel__tag">FEATURED EVENT</span>
             </div>
-            {heroArtwork[featuredLive.game] && (
-              <img className="stage-panel__art" src={heroArtwork[featuredLive.game]} alt="" />
-            )}
+            <img
+              className="stage-panel__art"
+              src={heroArtwork[featuredLive.game]}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              style={{ objectPosition: heroArtworkPosition[featuredLive.game] }}
+              onError={(event) => {
+                event.currentTarget.style.display = 'none'
+                console.error(`Could not load featured event artwork: ${heroArtwork[featuredLive.game]}`)
+              }}
+            />
             <div className="stage-panel__body">
               <p className="stage-panel__game">
                 {liveGame?.name} <span>·</span> {liveGame?.seasonLabel}

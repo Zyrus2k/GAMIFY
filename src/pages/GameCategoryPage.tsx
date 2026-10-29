@@ -4,7 +4,6 @@ import { games, gameBySlug } from '../data/games'
 import { resultsByGame } from '../data/results'
 import { isPublicTournament } from '../lib/events'
 import { useApp } from '../context/AppContext'
-import { GameMotif } from '../components/GameMotif'
 import { TournamentCollection } from '../components/TournamentCollection'
 import { ResultsGrid } from '../components/ResultsGrid'
 import { Leaderboard } from '../components/Leaderboard'
@@ -13,6 +12,29 @@ import { usePageTitle } from '../hooks/usePageTitle'
 import { NotFoundPage } from './NotFoundPage'
 
 type Tab = 'tournaments' | 'results' | 'standings'
+
+const gameArtwork: Record<string, { src: string; position: string }> = {
+  bayblade: { src: '/images/categories/backgrounds/beyblade-x.webp', position: '50% 48%' },
+  'cardfight-vanguard': {
+    src: '/images/categories/backgrounds/cardfight-vanguard.jpg',
+    position: '50% 56%',
+  },
+  'cookie-run': {
+    src: '/images/categories/backgrounds/cookie-run-kingdom.jpg',
+    position: '52% 48%',
+  },
+  cyberpunk: { src: '/images/categories/backgrounds/cyberpunk-2077.jpg', position: '50% 52%' },
+  riftbound: {
+    src: '/images/categories/backgrounds/riftbound-jinx-art.jpg',
+    position: '42% 48%',
+  },
+  pokemon: { src: '/images/categories/backgrounds/pokemon-pikachu.png', position: '50% 45%' },
+  mtg: { src: '/images/categories/backgrounds/magic-planeswalker.jpg', position: '50% 48%' },
+  'flesh-and-blood': {
+    src: '/images/categories/backgrounds/flesh-and-blood-kassai.webp',
+    position: '50% 38%',
+  },
+}
 
 export function GameCategoryPage() {
   const { slug } = useParams()
@@ -51,6 +73,17 @@ export function GameCategoryPage() {
     <>
       <section className={`game-banner game--${game.slug} cat--${game.variant}`}>
         <div className="game-banner__texture" aria-hidden="true" />
+        <img
+          className="game-banner__art"
+          src={gameArtwork[game.slug].src}
+          alt=""
+          aria-hidden="true"
+          style={{ objectPosition: gameArtwork[game.slug].position }}
+          onError={(event) => {
+            event.currentTarget.style.display = 'none'
+            console.error(`Could not load game banner artwork: ${gameArtwork[game.slug].src}`)
+          }}
+        />
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
@@ -104,11 +137,6 @@ export function GameCategoryPage() {
               </dl>
             </div>
 
-            <div className="game-banner__visual" aria-hidden="true">
-              <div className="game-banner__ring" />
-              <GameMotif game={game.slug} className="game-banner__motif" />
-              <span className="game-banner__season">{game.seasonLabel}</span>
-            </div>
           </div>
         </div>
       </section>
