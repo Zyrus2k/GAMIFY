@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" fill="none">
+  <defs><linearGradient id="night" x2="0" y2="1"><stop stop-color="#11172a"/><stop offset=".58" stop-color="#172035"/><stop offset="1" stop-color="#090b11"/></linearGradient><linearGradient id="street" x2="0" y2="1"><stop stop-color="#343148"/><stop offset="1" stop-color="#0a0c12"/></linearGradient><radialGradient id="neon"><stop stop-color="#36cbd0" stop-opacity=".75"/><stop offset="1" stop-color="#36cbd0" stop-opacity="0"/></radialGradient></defs>
+  <path fill="url(#night)" d="M0 0h1000v700H0z"/><ellipse cx="516" cy="310" rx="390" ry="280" fill="url(#neon)"/>
+  <path d="M0 77 121 34v400H0zm128 76 110-38v323H128zm123-93 142-41v433H251zm150 69 81-25v350h-81zm308-36 148 50v313H709zm171 84 120 43v252H880z" fill="#111725" stroke="#526179" stroke-opacity=".35" stroke-width="4"/>
+  <path d="M37 115h36v13H37zm0 42h55v8H37zm126 31h46v12h-46zm124-86h76v10h-76zm20 34h43v9h-43zm420 3h56v12h-56zm135 54h66v10h-66z" fill="#57e0de" opacity=".72"/>
+  <path d="M0 478 292 410h406l302 68v222H0z" fill="url(#street)"/>
+  <path d="m494 431-74 269m157-269 96 269M0 555l390-51m610 51-392-51" stroke="#ff5d9d" stroke-opacity=".42" stroke-width="5"/>
+  <path d="m492 452-30 248m55-248 38 248" stroke="#81f4e8" stroke-opacity=".55" stroke-width="8"/>
+  <path d="M69 491h139l-28 73H38zm729-5h143l55 87H823z" fill="#d04b88" opacity=".48"/>
+  <path d="M109 509h46v8h-46m640-8h45v8h-45" stroke="#ffd77c" stroke-width="8"/>
+  <path d="M438 478h128" stroke="#e8f6f4" stroke-opacity=".36" stroke-width="3"/><path d="M35 638h184m567 0h179" stroke="#3bd4d0" stroke-opacity=".6" stroke-width="3"/>
+</svg>

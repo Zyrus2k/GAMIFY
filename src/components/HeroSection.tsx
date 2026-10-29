@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom'
-import { GameMotif } from './GameMotif'
 import { games, gameBySlug } from '../data/games'
 import { results } from '../data/results'
 import { flagEmoji, formatCompactCurrency, formatDateTime } from '../lib/format'
 import { isPublicTournament } from '../lib/events'
 import { useApp } from '../context/AppContext'
+
+const heroArtwork: Partial<Record<string, string>> = {
+  bayblade: '/images/categories/bayblade-artwork.webp',
+  'cardfight-vanguard': '/images/categories/cardfight-vanguard-artwork.webp',
+  'cookie-run': '/images/categories/cookie-run-artwork.webp',
+  cyberpunk: '/images/categories/cyberpunk-artwork.webp',
+  riftbound: '/images/categories/riftbound-artwork.webp',
+}
 
 export function HeroSection() {
   const { tournaments } = useApp()
@@ -89,7 +96,9 @@ export function HeroSection() {
               </span>
               <span className="stage-panel__tag">FEATURED EVENT</span>
             </div>
-            <GameMotif game={featuredLive.game} className="stage-panel__motif" />
+            {heroArtwork[featuredLive.game] && (
+              <img className="stage-panel__art" src={heroArtwork[featuredLive.game]} alt="" />
+            )}
             <div className="stage-panel__body">
               <p className="stage-panel__game">
                 {liveGame?.name} <span>·</span> {liveGame?.seasonLabel}

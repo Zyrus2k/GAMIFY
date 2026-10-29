@@ -2,7 +2,29 @@ import { Link } from 'react-router-dom'
 import type { Game } from '../types'
 import { isPublicTournament } from '../lib/events'
 import { useApp } from '../context/AppContext'
-import { GameMotif } from './GameMotif'
+
+const categoryArtwork: Record<Game['slug'], { src: string; position: string }> = {
+  bayblade: { src: '/images/categories/backgrounds/beyblade-x.webp', position: '50% 48%' },
+  'cardfight-vanguard': {
+    src: '/images/categories/backgrounds/cardfight-vanguard.jpg',
+    position: '50% 56%',
+  },
+  'cookie-run': {
+    src: '/images/categories/backgrounds/cookie-run-kingdom.jpg',
+    position: '52% 48%',
+  },
+  cyberpunk: { src: '/images/categories/backgrounds/cyberpunk-2077.jpg', position: '50% 52%' },
+  riftbound: {
+    src: '/images/categories/backgrounds/riftbound-jinx-art.jpg',
+    position: '42% 48%',
+  },
+  pokemon: { src: '/images/categories/backgrounds/pokemon-pikachu.png', position: '50% 45%' },
+  mtg: { src: '/images/categories/backgrounds/magic-planeswalker.jpg', position: '50% 48%' },
+  'flesh-and-blood': {
+    src: '/images/categories/backgrounds/flesh-and-blood-kassai.webp',
+    position: '50% 38%',
+  },
+}
 
 export function GameCategoryCard({
   game,
@@ -36,7 +58,17 @@ export function GameCategoryCard({
         </span>
       </div>
 
-      <GameMotif game={game.slug} className="cat-card__motif" />
+      <img
+        className="cat-card__art"
+        src={categoryArtwork[game.slug].src}
+        alt=""
+        style={{ objectPosition: categoryArtwork[game.slug].position }}
+        loading={index < 4 ? 'eager' : 'lazy'}
+        onError={(event) => {
+          event.currentTarget.style.display = 'none'
+          console.error(`Could not load category artwork: ${categoryArtwork[game.slug].src}`)
+        }}
+      />
 
       <div className="cat-card__body">
         <h3>{game.name}</h3>
